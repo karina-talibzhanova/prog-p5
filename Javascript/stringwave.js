@@ -1,23 +1,24 @@
 //put canvas in predefined place on page (div). need to know how to control canvas (look on p5)
 //ability to start and stop sketch
 
-
+//string, int, float (between 0.05 and 0.3), int, string (rgb, rgba, hex)
 
 
 
 
 class StringWave {
-    constructor(user_text, user_size, user_time, user_wavelength){
+    constructor(user_text, user_background, user_size, user_time, user_wavelength){
 		this.t = user_text; // actual text
 		this.angle = 0; // this has something to do with how the text moves
 		this.hue = 0; // changes start colour
 		this.text_size = user_size || 70;
 		this.time_period = user_time || 0.15;
 		this.wavelength = user_wavelength || 800;
+		this.background = user_background || 0;
     }
 
     draw(pg){
-		pg.background(0);
+		pg.background(this.background);
 
 		pg.colorMode(HSB);
 
@@ -62,7 +63,7 @@ function setup(){
 	canvas = createCanvas(600, 600);
 	canvas.parent('test');
 	pg = createGraphics(400, 400);
-	obj = new StringWave("Hello World!", 70, 0.15, 100);
+	obj = new StringWave("Hello World!",'rgba(0,0,0,0.5)', 70, 0.15, 100);
 }
 
 function draw(){
