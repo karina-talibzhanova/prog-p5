@@ -54,20 +54,3 @@ class StringWave {
 
 	}
 }
-
-var obj;
-var pg;
-var canvas;
-
-function setup(){
-	canvas = createCanvas(600, 600);
-	canvas.parent('test');
-	pg = createGraphics(400, 400);
-	obj = new StringWave("Hello World!",'rgba(0,0,0,0.5)', 70, 0.15, 100);
-}
-
-function draw(){
-	background('green');
-	obj.draw(pg);
-	image(pg, 0, 0);
-}
