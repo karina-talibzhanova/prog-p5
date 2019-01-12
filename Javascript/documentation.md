@@ -16,17 +16,27 @@ The `constructor` can take 5 arguments, the first of which is mandatory and the 
 * `user_text` - the text that will be displayed. Must be given. Must be a string.
 * `user_background` - the background colour of the canvas. Defaults to 0 if not specified. Can take the following values:
     * grayscale integer value from 0 to 255
-    * named SVG/CSS colour string e.g. 'red'
-    * three-digit hexadecimal RGB notation e.g. '#fae'
-    * six-digit hexadecimal RBG notation e.g. '#222222'
-    * integer RGB notation e.g. 'rgb(0,255,0)'
-    * percentage RGB notation e.g. 'rgb(100%,0%,10%)'
-    * percentage RGBA notation e.g. 'rgba(100%,0%,100%,0.5)'
-    * p5 Color object e.g. color(0, 0, 255)
-> for further information, refer to the [reference page for background](https://p5js.org/reference/#/p5/background).
+    * named SVG/CSS colour string e.g. `'red'`
+    * three-digit hexadecimal RGB notation e.g. `'#fae'`
+    * six-digit hexadecimal RBG notation e.g. `'#222222'`
+    * integer RGB notation e.g. `'rgb(0,255,0)'`
+    * percentage RGB notation e.g. `'rgb(100%,0%,10%)'`
+    * percentage RGBA notation e.g. `'rgba(100%,0%,100%,0.5)'`
+    * p5 Color object e.g. `color(0, 0, 255)`
+> for further information, refer to the [p5 reference page for `background`](https://p5js.org/reference/#/p5/background).
 * `user_size` - the font size of the text, measured in pixels. Defaults to 70 if not specified. Must be an integer
 * `user_time` - the time period of the wave. Defaults to 0.15 if not specified. Must be a number (good values are between 0.05 and 0.3)
 * `user_wavelength` - the wavelength of the wave. Defaults to 800 if not specified. Must be a number (can be integer or float. Best values are in the hundreds)
+
+### Properties
+It is also possible to change the following properties:
+Property Name | Type | Range of Values | Description
+------------- | ---- | --------------- | -----------
+`text` | string | any string input | the actual text that will be displayed
+`backgroundColor` | integer in range (0, 255), string, function (see above) | see above | background colour of the canvas
+`size` | integer | positive integers | font size of text
+`timePeriod` | float | positive numbers | time period of the wave
+`wavelength` | float | positive numbers | wavelength of the wave
 
 
 constructor(user_text, user_background, user_size, user_time, user_wavelength)
