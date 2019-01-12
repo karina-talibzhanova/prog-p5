@@ -49,12 +49,12 @@ var canvas;
 function setup(){
 	canvas = createCanvas(600, 600);
 	canvas.parent('test');
-	pg = createGraphics(400, 400);
+	pg = createGraphics(600, 600);
 	obj = new StringWave("Hello World!");
 }
 
 function draw(){
-	background('green');
+	background('black');
 	obj.draw(pg);
 	image(pg, 0, 0);
 }

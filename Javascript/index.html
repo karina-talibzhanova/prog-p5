@@ -16,17 +16,35 @@
     </head>
 
     <body>
-        <h1>Hello World! Testing if p5 gui works again and again</h1>
-        <center><div id = "test"></div></center>
-        <div class="slidecontainer">
-            <input type="range" min="0.05" max="0.3" step="0.01" class="slider" id="time_period">
+        <h1>StringWave</h1>
+        <div id ="toolbar">
+            <p>
+            <label for="wave_text">Text:</label><br>
+            <input type ="text" id="wave_text" name="wave_text">
+            </p>
+            <p>
+            <label for="text_size">Text size:</label><br>
+            <input type ="number" id="text_size" name="text_size">
+            </p>
+            <p>
+            <label for="background_col">Canvas background colour:</label><br>
+            <input type ="color" id="background_col" name="background_col">
+            </p>
+            <p>
+            <label for="time_period">Wave time period:</label><br>
+            <div class="slidecontainer">
+                <input type="range" min="0.05" max="0.3" step="0.01" class="slider" id="time_period" name="time_period">
+            </div>
+            </p>
+            <p>
+            <label for="wavelength">Wavelength:</label><br>
+            <div class="slidecontainer">
+                <input type="range" min="100" max="1000" class="slider" id="wavelength" nam="wavelength">
+            </div> 
+            </p>           
         </div>
-        <div class="slidecontainer">
-            <input type="range" min="100" max="1000" class="slider" id="wavelength">
-        </div>
-        <input type ="text" id="wave_text">
-        <input type ="number" id="text_size">
-        <input type ="color" id="background_col">
+        <div id = "test"></div>
+        
     </body>
     <script src ="sliders.js"></script>
 </html>
