@@ -54,7 +54,6 @@ function setup(){
 }
 
 function draw(){
-	background('black');
 	obj.draw(pg);
 	image(pg, 0, 0);
 }
