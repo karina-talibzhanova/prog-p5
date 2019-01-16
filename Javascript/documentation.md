@@ -10,7 +10,10 @@ This component requires the use of p5 libraries which can either be downloaded [
 ## How to Use StringWave
 
 ### Methods and Parameters
+
 StringWave contains two methods; `constructor()` and `draw()`. `constructor()` is called when you create the object and initialises it with the values you pass into it. `draw()` can then be called to actually draw the object.
+
+#### `constructor` method
 
 The `constructor` can take 5 arguments, the first of which is mandatory and the rest are optional. These arguments are as follows:
 * `user_text` - the text that will be displayed. Must be given. Must be a string.
@@ -28,6 +31,14 @@ The `constructor` can take 5 arguments, the first of which is mandatory and the 
 * `user_time` - the time period of the wave. Defaults to 0.15 if not specified. Must be a number (good values are between 0.05 and 0.3)
 * `user_wavelength` - the wavelength of the wave. Defaults to 800 if not specified. Must be a number (can be integer or float. Best values are in the hundreds)
 
+The syntax is as follows: `object = new StringWave(user_text, [user_background, user_size, user_time, user_wavelength])`
+
+#### `draw` method
+
+The `draw` method takes one argument, which is optional. It can accept a renderer to be passed into it (read the [p5 reference page for `createGraphics` for more information](https://p5js.org/reference/#/p5/createGraphics)). This allows for it to be draw on a canvas that may already have other drawings on it. More information will be detailed in **Implementation Within a Webpage**.
+
+The syntax is as follows: `object.draw([renderer])`
+
 ### Properties
 It is also possible to change the following properties:
 Property Name | Type | Range of Values | Description
@@ -38,12 +49,83 @@ Property Name | Type | Range of Values | Description
 `timePeriod` | float | positive numbers | time period of the wave
 `wavelength` | float | positive numbers | wavelength of the wave
 
-
-constructor(user_text, user_background, user_size, user_time, user_wavelength)
-
 ### Implementation Within a Webpage
 
+The p5 library requires there to be two JavaScript functions that will be called to draw your object.
+```javascript
+function setup() {
+    .
+    .
+    .
+}
+
+function draw() {
+    .
+    .
+    .
+}
+
+```
+
+In the setup, you should create the canvas, the object, and optionally, the renderer. For example:
+
+```javascript
+// create global variables so they can be accessed in both functions
+var obj;
+var canvas;
+[var pg;]
+
+function setup() {
+	canvas = createCanvas(600, 600); // create a canvas 600 x 600 (in pixels)
+	canvas.parent('test'); // anchor it to an element in your html that has id "test"
+	[pg = createGraphics(600, 600);] // create the renderer 600 x 600 (in pixels)
+	obj = new StringWave("Hello World!"); // create the object that will be drawn on the renderer
+}
+```
+
+Then in the draw function, you should call the draw method of the object. For example:
+
+```javascript
+function draw() {
+	obj.draw(); // call the draw method
+}
+```
+
+If you have created a renderer and want to pass it into the draw method, you should do the following:
+
+```javascript
+function draw() {
+    obj.draw(pg); // call the draw method and give the renderer as an argument
+    image(pg, 0, 0); // draws graphic created by renderer onto canvas. syntax is as follows: image(img, x-coord, y-coord)
+}
+```
+
+Your HTML could then look like this:
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+        <script src = "stringwave.js"></script>   
+    </head>
+
+    <body>
+        <h1>StringWave</h1>
+
+        <div id = "test"></div> <!-- object will be displayed in this div box -->
+        
+    </body>
+</html>
+```
+
+blah blah talk about how p5 just draws for ever because ahhhhhhhhhhhhhh
+oh shit also talk about renderers in more detail even tho idk what tf is going on ha ha ha
+oh, throw some html in there and be like "this is what is looks like when it's all put together. you can style it however you want, idc"
 ## Example of Implementation
+talk about how exactly the value changes
+so like, when there's a change in input, it catches that, stops p5 from drawing the thing, sets the property to the new value, calls loop() so p5 resumes drawing the thing
+explain that p5 repeatedly calls draw() to draw the next frame. idk maybe be like "doesn't erase the last frame so be careful lol"
 
 * give source of original sketch and acknowledge the license
 * explain how the methods work and the parameters and stuff... and like various contexts or whatever
