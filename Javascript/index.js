@@ -46,14 +46,14 @@ var obj;
 var pg;
 var canvas;
 
-function setup(){
+function setup() {
 	canvas = createCanvas(600, 600);
 	canvas.parent('test');
 	pg = createGraphics(600, 600);
 	obj = new StringWave("Hello World!");
 }
 
-function draw(){
+function draw() {
 	obj.draw(pg);
 	image(pg, 0, 0);
 }
