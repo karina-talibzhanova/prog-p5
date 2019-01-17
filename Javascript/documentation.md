@@ -41,6 +41,7 @@ The syntax is as follows: `object.draw([renderer])`
 
 ### Properties
 It is also possible to change the following properties:
+
 Property Name | Type | Range of Values | Description
 --------------|------|-----------------|------------
 `text` | string | any string input | the actual text that will be displayed
