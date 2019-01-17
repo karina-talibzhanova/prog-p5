@@ -1,7 +1,7 @@
 class StringWave {
     constructor(user_text, user_background, user_size, user_time, user_wavelength){
 		this.t = user_text; // text that will be displayed
-		this.angle = 0; // idk
+		this.angle = 0; // start angle
 		this.hue = 0; // start colour
 		this.text_size = user_size || 70;
 		this.time_period = user_time || 0.15;
