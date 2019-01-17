@@ -119,18 +119,37 @@ Your HTML could then look like this:
 </html>
 ```
 
-blah blah talk about how p5 just draws for ever because ahhhhhhhhhhhhhh
-oh shit also talk about renderers in more detail even tho idk what tf is going on ha ha ha
-oh, throw some html in there and be like "this is what is looks like when it's all put together. you can style it however you want, idc"
-## Example of Implementation
-talk about how exactly the value changes
-so like, when there's a change in input, it catches that, stops p5 from drawing the thing, sets the property to the new value, calls loop() so p5 resumes drawing the thing
-explain that p5 repeatedly calls draw() to draw the next frame. idk maybe be like "doesn't erase the last frame so be careful lol"
+## Explanation of Example
 
-* give source of original sketch and acknowledge the license
-* explain how the methods work and the parameters and stuff... and like various contexts or whatever
-    * like, how pg means you gotta give it a canvas to draw on and it'll do the rest
-    * and also how you need function setup() and function draw() and what to put in each
-        * show an example of what you want in the docs plus explain what each component does (e.g. the image() function)
-* explain the example
-    * so like, what sliders do, maybe how they're passed to the setup() and draw() functions?
+### HTML
+
+The body of the page contains a box that holds the properties that can be changed (text, text size, background colour, time period, wavelength) and a parent `div` that contains the results of the object. The properties are controlled by the following:
+
+Property Name | Input Type | Description
+--------------|------------|------------
+Text | `text` | Changes the `text` property of the object
+Text size | `number` | Changes the `size` property of the object
+Background colour | `color` | Changes the `backgroundColor` property of the object
+Time period | `range` | Changes the `timePeriod` property of the object
+Wavelength | `range` | Changes the `wavelength` property of the object
+
+### CSS
+
+The CSS contains basic styling of the page. It controls the positioning of the elements within it and also the styling of the range sliders on the page.
+
+### JavaScript
+
+The JavaScript contains event listeners that will update a given property to the value the user has set it at. It also contains the `setup()` and `draw()` functions required by the p5 library in order to run and display the component.
+
+Here is an example of an event listener:
+
+```javascript
+var wavelength = document.getElementById("wavelength");
+
+wavelength.oninput = function() {
+    noLoop();
+    obj.wavelength = this.value;
+    loop();
+}
+```
+The variable `wavelength` is bound to the range slider in the HTML body. When there is an input, the relevant property is updated to the current value return by the range slider. The reason behind `noLoop()` and `loop()` is that `draw()` needs to stop being called as there are structural changes being made to the object.
