@@ -57,7 +57,13 @@
 
 ### Quality of Documentation
 * goddamn i love this documentation
+* but like, tell me briefly what this component is and what p5 is and why you need p5 pls
 * thank you for telling me what type your parameters take i love you so much
+* hey they licensed it
+* and they gave credit to original
+* and also mentioned the js colour picker!
+* i mean, i guess they explained their example?
+* also, suggested improvements is not really needed in the documentation
 
 ### Code Quality
 * passed the linter so all good there
