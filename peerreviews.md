@@ -38,14 +38,30 @@
 
 ## Review 2
 ### Usability of Code
+* nice parameters, good constructor and good default values
+    * bit annoyed that theta has to be a global variable but everything breaks if it isn't so i guess that's okay?
+* problem with setOverdrive tho
+    * if user does not have a checkbox, they are restricted to 2 values - 10 or 30
+    * don't think it should be dictated by a bool. just let the user set overdrive to whatever they like
 
 ### Development of Original
+* yes, original was submitted as .js file, and also linked to original sketch in documentation so thanks my dude
+* ngl, it wasn't really developed much. like.... scope-wise. it does the same stuff, just now you can fiddle with the values
+    * i mean technically, overdrive is a new thing so that's nice
+* was translated from processing to p5 javascript so that's good
 
 ### Quality of Example
+* nice sliders, very good
+* except, frequency and wavelength are the wrong way around
+* also would be nice to modify 'overdrive' itself (also would prefer if it was renamed to amplitude... since that is what it is)
 
 ### Quality of Documentation
+* goddamn i love this documentation
+* thank you for telling me what type your parameters take i love you so much
 
 ### Code Quality
+* passed the linter so all good there
+* relevant comments so yay
 
 
 ## Review 3
