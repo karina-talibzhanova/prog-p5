@@ -9,12 +9,15 @@
 * getters and setters are good tho
 * methinks it is reusable so yay!
 
+The constructor is empty so there are no parameters. This means that when creating an object, the user cannot set the parameters of the object and they are obliged to do so through the getters and setters. This also means that there are no default values for the parameters. However, there are appropriate getters and setters, and the component as a whole is reusable.
+
 ### Development of Original
 * original was submitted
 * definitely in a class
 * ......... there are no parameters, only getters and setters
 * extra things were added such as roman numerals, date, am/pm stuff so yay
 
+The original code was submitted and the submitted code was successfully converted into a class. Though the constructor is empty, the values from the getters and setters are used in the code to change attributes such as the clock face colour. The scope was extended well by adding the current date, and whether it is AM/PM. There is also the option to change the number system from numbers to Roman Numerals.
 
 ### Quality of Example
 * mostly valid, just a few instances of using 'align' when that is now deprecated and CSS should be used instead
@@ -24,17 +27,23 @@
     * oh also, clock style and clock colour is the same thing so like...... why?
     * also if like.... i could change the colour to anything i want, that would be cool
 
+The form controls are very good and intuitive to use. The HTML is mostly valid - there are some instances of 'align' being used, which is now deprecated and should be replaced using CSS instead. The main criticism I have with the example is the fact that I am restricted to set colours for the text and clock colour. It would have been preferable to be able to choose your own colours. Additionally, I think it would have been a better user experience if it were possible to individually change the text colour of a clock.
+
 ### Quality of Documentation
 * just tells me that there are getters/setters/functions
     * don't know what values to pass for functions. string? int? bool? who knows
 * if i knew nothing about p5, i would not be able to use this class with its documentation
 * good acknowledgement of source tho and licensing and libraries used and stuff
 
+The documentation clearly describes the nature of the component and acknowledges the source of the original sketch, the licensing the sketch and the component follow, and the libraries used. It also lists all the getters and setters within the class so it is clear which parts of the object can be modified. However, it would be better if it was explicitly stated in the documentation what kind of values the parameters take (e.g. integer, string, bool, etc.). Additionally, while the p5 libraries are mentioned, I think it would be difficult for a user to be able to use this class for their own use if they are unaware of how p5 works (i.e. function setup() and function draw() being necessary for the object to work as expected).
+
 ### Code Quality
 * jesus i hate the var foo, bar, etc; thing but like, i get the original person did that. it just seems kinda lazy tho
 * mixture of single and double quotes. pick one and stick with it
 * comments are okay, wouldn't mind a bit more information but otherwise, i understand what each bit does so
 * passes linter otherwise
+
+The code is mostly valid, however there are instances of a mixture of single and double quotes being used. This is the only case of inconsistency in the style of the code. The comments, while short, easily convey what the purpose of the section of code beneath is and make it easy to understand how the code works at a glance.
 
 
 ## Review 2
