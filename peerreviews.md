@@ -54,17 +54,23 @@ The code is mostly valid, however there are instances of a mixture of single and
     * if user does not have a checkbox, they are restricted to 2 values - 10 or 30
     * don't think it should be dictated by a bool. just let the user set overdrive to whatever they like
 
+The constructor contains appropriate parameters that all have good default values. The component is certainly reusable and would be easy to implement by a user. However, the parameter 'overdrive' restricts the user to two values because it only takes boolean values. If the user wanted a different value for 'overdrive', they would have to modifiy the class itself, or just accept the two given values. As a minor point, I find it a bit odd that 'theta' is a global variable outside the class but it appears that the code does not work without it.
+
 ### Development of Original
 * yes, original was submitted as .js file, and also linked to original sketch in documentation so thanks my dude
 * ngl, it wasn't really developed much. like.... scope-wise. it does the same stuff, just now you can fiddle with the values
     * i mean technically, overdrive is a new thing so that's nice
 * was translated from processing to p5 javascript so that's good
 
+The original sketch was both submitted as a .js file and also linked to in the documentation. The original was written in Processing so the translation into JavaScript was very well done, as was the refactorisation into a class. All useful properties were parameterised. There was one added property ('overdrive') so the scope was not extended by a lot, though work was done in this area.
+
 ### Quality of Example
 * valid html!!!
 * nice sliders, very good
 * except, frequency and wavelength are the wrong way around
 * also would be nice to modify 'overdrive' itself (also would prefer if it was renamed to amplitude... since that is what it is)
+
+The example as a whole is pleasing to view and use. The HTML is valid and all the elements that modified the object's values worked well. However, I believe that 'Frequency' and 'Wavelength' are the wrong way around, and I would have also liked to be able to modify 'overdrive' (I also think it should have been renamed to 'amplitude').
 
 ### Quality of Documentation
 * goddamn i love this documentation
@@ -76,9 +82,15 @@ The code is mostly valid, however there are instances of a mixture of single and
 * i mean, i guess they explained their example?
 * also, suggested improvements is not really needed in the documentation
 
+All the parameters for the constructor are clearly explained and detail the type of value it takes, whether it is optional, and what the default value is if nothing is passed into that argument. The methods are also clearly explained as well as their parameters. Additionally, the documentation shows how to actually set up and use their component through a short example at the very beginning. It would have been nice if it was stated obviously that p5 libraries are necessary for it to work, otherwise the user must infer this from the rest of the documentation.
+
+The explanation of the example was not written in depth but it does state how the HTML document interacts with the JavaScript code. There is a section on suggested improvements but I think this is unnecessary and does not belong in the documentation. Finally, they acknowledged where they got certain components and the relevant licensing.
+
 ### Code Quality
 * passed the linter so all good there
 * relevant comments so yay
+
+There were no issues when examined by the linter. There are also relevant comments.
 
 
 ## Review 3
