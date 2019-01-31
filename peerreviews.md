@@ -102,12 +102,16 @@ There were no issues when examined by the linter. There are also relevant commen
 * ffs their background, rectangle, and outline colours are tied to their sliders
     * not properly parameterised so user would either have to modify the code or make sure they are definitely using rgb
 
+The constructor has appropriate parameters as well as default values. The code also contains getters and setters for each of these values, however, there are duplicate set functions (e.g. changeSpeed) that are unnecessary when there already are setters. Additionally, the parameter 'backgroundColour' is seen in the constructor but it does not have its own getter and setter. Also, the getters will always return None because there is no variable called '_numb' for example, only 'numb'. A quick fix would be to just rename the variables in the constructor (e.g. 'this.numb' becomes 'this._numb'). Finally, the background, rectangle, and outline colours can be changed in the 'draw' function of the class. Because they are linked to the RGB sliders, this makes the component not reusable as a user will need to modify the code (although I believe simply deleting those 3 lines would solve this issue).
+
 ### Development of Original
 * original code was submitted, yes
 * original was written in processing so good job on translating that into javascript
 * definitely stuck it in a class
 * definitely was parameterised
 * i'll be honest, the scope was not exactly extended. the final submission basically does the same as the original sketch
+
+The original code was submitted and was written in Processing. The submitted code was well translated into JavaScript, and while it was refactored into a class and parameterised, it technically is not reusable in the current state it is in. The scope was not particularly extended as it has exactly the same funcitonality as the original sketch.
 
 ### Quality of Example
 * jesus christ my eyes burn
@@ -122,6 +126,8 @@ There were no issues when examined by the linter. There are also relevant commen
 * rgb sliders are good but like..... is there really a need to be able to drag them
     * also, personal preference, but i prefer colour pickers as opposed to picking rgb values. it's an easier user experience
 
+The HTML has some problems with its validity as the same id is used multiple times when a class should be used instead. Additionally, because the canvas is given a fixed size, it presents as too large on some screens and results in scrollbars that are somewhat annoying. The form controls are intuitive to use and they certainly work in changing the attributes of the class, though it is annoying that the values are not updated live (i.e. the attributes only change when the slider is released, not while the slider is moving). Also, I believe colour pickers tend to result in an easier user experience than RGB sliders. Finally, just don't use Comic Sans.
+
 ### Quality of Documentation
 * acknowledged source and licensing
 * not really necessary to say it's a summative but it doesn't detract from the actual content so
@@ -134,9 +140,17 @@ There were no issues when examined by the linter. There are also relevant commen
 * TELL ME ABOUT P5 FFS
 * i mean, you do tell me about the properties your class can take but like.... see above
 
+All relevant sources were acknowledged along with their respective licensing. The component's purpose is also explained.
+
+Nowhere in this documentation is p5 mentioned. This means that a user with no knowledge of p5 would not be able to get this code working with theirs and they would be forced to do extra research by following the links in the documentation to openprocessing and infering from there that they need to use the p5 libraries. Additionally, there is an entire chunk showing GitHub commits which is unnecessary as all a user wants is a working piece of code with adequate documentation. While the constructor is described in terms of the parameters it takes and what they change, there is no mention of what kind of values are required. It's possible to deduce for some of the arguments that they require an integer input, but the rest are not explicitly stated. A similar problem is found in the explanation of the methods (the setters).
+
+The example is explained in that the purpose of the sliders is detailed. It was good to see the maximum and minimum values being stated where appropriate.
+
 ### Code Quality
 * mostly passes linter
     * one instance of mixed tabs and spaces
     * also, entire code block in draw method should be indented
 * commenting is pretty good
     * a bit confusing on lines 132 - 144
+
+The code mostly passes the linter, though there appears to be one instance of mixed tabs and spaces. Additionally, the entire code block in the 'draw' method should be indented. The comments in the code are well written and concise, though there on lines 132-144, they are slightly confusing.
